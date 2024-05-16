@@ -49,7 +49,6 @@ const AlertModal: React.FC<ModalProps> = ({ show, onClose }) => {
     isError,
     error
   } = useGetAlertsQuery('');
-  console.log('Data', data, isLoading, isSuccess, isError);
   if (!show) {
     return null;
   }
