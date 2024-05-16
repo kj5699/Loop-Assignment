@@ -47,8 +47,8 @@ export const  SIDEBAR_OPTIONS = [
 export const LOGO_IMAGE = '/assets/lo0p.svg';
 
 export const API_URLS = {
-    baseUrl: 'http://demo6728408.mockable.io',
-    getAlerts: 'http://demo6728408.mockable.io/alerts',
+    baseUrl: 'https://demo6728408.mockable.io',
+    getAlerts: 'https://demo6728408.mockable.io/alerts',
     getEndorsement: 'https://demo6728408.mockable.io/overview'
 }
 export const ALERT_CTA_DATA = {

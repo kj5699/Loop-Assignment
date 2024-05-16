@@ -18,10 +18,7 @@ export const fetchAlertsData = createAsyncThunk('posts/fetchfetchAlertsData', as
 export const alertsSlice = createSlice({
   name: 'alerts',
   initialState,
-  reducers: {
-
-  },
-
+  reducers: {},
 });
 
 export default alertsSlice.reducer

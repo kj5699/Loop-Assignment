@@ -17,15 +17,8 @@ const HeaderLogo = () => {
 
 const Header = () => {
   const [showModal, setShowModal ] = useState(false);
-  const {data , status}  = useSelector((state: any) => state.alerts);
-  const dispatch: any = useDispatch()
   const  openModal = useCallback(() => setShowModal(true),[]);
   const  closeModal = useCallback(() => setShowModal(false),[]);
-  useEffect(() => {
-    if(status ==='idle'){
-        dispatch(fetchAlertsData())
-    }
-  },[])
   return (
     <header className={styles.header}>
         <HeaderLogo/>
