@@ -30,7 +30,7 @@ export const generateEndorsemnetCards = (data) =>{
 
 export const  WARNING_DATA = {
     text:'All values are estimated figures, actual figures may slightly vary',
-    icon :'/assets/info.svg' 
+    icon :'/assets/I⚠️nfo.svg' 
 }
 export const  SIDEBAR_OPTIONS = [
     { id: '1',
@@ -52,8 +52,7 @@ export const API_URLS = {
     getEndorsement: 'https://demo6728408.mockable.io/overview'
 }
 export const ALERT_CTA_DATA = {
-    label :'Alerts',
-    iconUrl :'/assets/alerts.svg',
+    label :'Alerts ⚠️',
     type: "alert",
     iconDirection:'right'
 }
