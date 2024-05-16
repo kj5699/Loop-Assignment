@@ -89,3 +89,8 @@ export interface TimeLineStepProps {
     };
     bgClass?: string;
 }
+export interface InsuranceInfoProps {
+    title : string;
+    image : string;
+    tags : string[];
+};
