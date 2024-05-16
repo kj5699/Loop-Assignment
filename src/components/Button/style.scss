@@ -1,0 +1,30 @@
+@import "../../styles/theme.scss";
+@import "../../styles/global.scss";
+.button{
+    @include heading-2;
+    width: max-content;
+    min-width: max-content;
+    background-color: $primary-white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.primary{
+    color : $primary-green ;
+    border: 1px solid $primary-green;
+}
+.alert{
+    color : $primary-white ;
+    background-color: $primary-red;
+    border: none;
+}
+.icon{
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    &:hover{
+        background-color: $border-grey;
+
+    }
+    
+}
