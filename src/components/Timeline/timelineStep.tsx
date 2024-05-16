@@ -6,6 +6,7 @@ import React, { LegacyRef } from 'react';
 const Step = styled.div`
     z-index: 2;
     
+    
 `;
 const IconWrap = styled.div`
     background-color: ${props => props.theme.$borderGrey};
@@ -14,9 +15,12 @@ const IconWrap = styled.div`
     height: 36px;
     margin-bottom: 1rem;
     align-content:center;
+
 `;
 const StepTitle = styled(StyledH2)`
-    color : ${props =>  props.theme.$textSecondary}
+    color : ${props =>  props.theme.$textSecondary};
+    text-align:start;
+    padding-right: 1rem;
 `;
 const TimeLineStep =React.forwardRef((props: TimeLineStepProps, ref:LegacyRef<HTMLDivElement>) =>(
     <Step className={styles.step + " " + props.bgClass} ref ={ref}>

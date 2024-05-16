@@ -10,8 +10,10 @@ interface InsuranceInfoProps {
 const InsuranceTitle = styled(StyledH1)`
     color : ${props =>  props.theme.$textPrimary}; 
     margin-bottom: 0.25rem;
+    text-align: start;
 `;
 const Tag = styled(StyledP2)`
+    text-align: start
     color : ${props =>  props.theme.$textPrimary};
     &:not(:last-of-type){
         &::after {
