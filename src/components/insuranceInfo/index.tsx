@@ -14,10 +14,9 @@ const InsuranceTitle = styled(StyledH1)`
 const Tag = styled(StyledP2)`
     color : ${props =>  props.theme.$textPrimary};
     &:not(:last-of-type){
-        margin-right: 1rem;
         &::after {
             content: ".";
-            margin-left: 8px;
+            margin-left:12px;
         }
     }
 `

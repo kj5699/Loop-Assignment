@@ -2,6 +2,7 @@
 @import "../../styles/global.scss";
 .info{
     display: flex;
+    margin-right: 32px;
     &__image{
         width: 48px;
         height: 48px;
@@ -11,7 +12,6 @@
             border-radius: 0.5rem;
         }
     }
-
     &__content{
         display:flex;
         flex-direction: column;
@@ -20,6 +20,7 @@
         margin-left: 1rem;
         &__tags{
             display: flex;
+            gap: 14px
         }
     }
 
