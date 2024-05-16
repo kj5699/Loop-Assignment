@@ -1,6 +1,7 @@
 @import "../../styles/theme.scss";
 .sidebar{
-    width: 200px;
+    width: 15vw;
+    min-width: 200px;
     background-color: $primary-green;
     color: $primary-white;
     padding: 20px 0px 20px 0px;
@@ -8,10 +9,12 @@
     &__list{
         list-style: none;
         &__item{
-            padding: 8px 32px 8px 8px;
+            padding: 8px 32px 8px 32px;
             width: 100%;
             margin-bottom: 0.5rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
             &:hover{
                 background-color: $primary-green-light;
             }
