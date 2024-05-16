@@ -16,9 +16,14 @@ const DataItem =styled.div`
     display: flex;
     justify-content: space-between;
     align-items : center;
-    padding: 20px 0;
+    padding: 1.25rem 0;
     &:not(:last-of-type){
         border-bottom : 1px solid #EEEEEE;
+    }
+    @media (max-width:768px){
+        flex-direction: column;
+        gap:32px;
+        padding: 0.5rem;
     }
 `;
 const DataTitle =styled(StyledP2)<{ $large?: boolean; }>`
@@ -31,6 +36,9 @@ const DataValue =styled(StyledH4)<{ $large?: boolean; }>`
     font-size: ${props => props.$large ?'20px' :'16px'};
     line-height: ${props => props.$large ?'24px' :'24px'};
     font-weight: 500;
+    min-width: max-content;
+    margin-left: 1rem;
+    flex-shrink: 0
     color : ${props =>  props.theme.$textPrimary}
 `;
 const EndorsementCard: React.FC<EndorsementCardProps> = (props: EndorsementCardProps) => {
