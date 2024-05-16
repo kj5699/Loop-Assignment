@@ -16,11 +16,10 @@ const Tag = styled(StyledP2)`
     &:not(:last-of-type){
         &::after {
             content: ".";
-            margin-left:12px;
+            margin-left: 0.5rem;
         }
     }
 `
-
 
 const InsuranceInfo = (props: InsuranceInfoProps) => {
     const { title, image, tags} = props;
