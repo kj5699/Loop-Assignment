@@ -10,16 +10,17 @@
         flex-direction: column;
         background-color: white;
         justify-content: space-between;
+        padding: 32px;
 
         &__header{
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 32px;
             margin-bottom: 32px;
         }
         &__timeline{
-            padding: 0 32px;
+            
+            height: 100%;
         }
     }
     &__bottom{

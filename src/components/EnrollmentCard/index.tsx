@@ -22,6 +22,7 @@ const DataItem =styled.div`
     }
     @media (max-width:768px){
         flex-direction: column;
+        align-items: start;
         gap:32px;
         padding: 0.5rem;
     }
@@ -30,7 +31,8 @@ const DataTitle =styled(StyledP2)<{ $large?: boolean; }>`
     font-size: ${props => props.$large ?'14px' :'12px'};
     line-height: ${props => props.$large ?'20px' :'18px'};
     font-weight: 400;
-    color : ${props =>  props.theme.$textSecondary}
+    color : ${props =>  props.theme.$textSecondary};
+    text-align :start;
 `;
 const DataValue =styled(StyledH4)<{ $large?: boolean; }>`
     font-size: ${props => props.$large ?'20px' :'16px'};
@@ -38,8 +40,12 @@ const DataValue =styled(StyledH4)<{ $large?: boolean; }>`
     font-weight: 500;
     min-width: max-content;
     margin-left: 1rem;
-    flex-shrink: 0
-    color : ${props =>  props.theme.$textPrimary}
+    flex-shrink: 0;
+    color : ${props =>  props.theme.$textPrimary};
+    text-align :start;
+    @media (max-width:768px){
+        margin : 0;
+    }
 `;
 const EndorsementCard: React.FC<EndorsementCardProps> = (props: EndorsementCardProps) => {
   const { data : [data1, data2] } = props
