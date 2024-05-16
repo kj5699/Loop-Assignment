@@ -13,7 +13,7 @@ const InsuranceTitle = styled(StyledH1)`
     text-align: start;
 `;
 const Tag = styled(StyledP2)`
-    text-align: start
+    text-align: start;
     color : ${props =>  props.theme.$textPrimary};
     &:not(:last-of-type){
         &::after {
