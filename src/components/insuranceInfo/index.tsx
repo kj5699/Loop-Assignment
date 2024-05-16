@@ -9,7 +9,7 @@ interface InsuranceInfoProps {
 
 const InsuranceTitle = styled(StyledH1)`
     color : ${props =>  props.theme.$textPrimary}; 
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 `;
 const Tag = styled(StyledP2)`
     color : ${props =>  props.theme.$textPrimary};
