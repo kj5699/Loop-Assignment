@@ -29,7 +29,7 @@ const IconHeading = (props: IconHeadingProps) => {
     <StyledIconHeading className={props.className}>
         {iconUrl && 
             <StyledIcon className={props.iconClass}>
-                <img src={iconUrl} alt={heading}></img>
+                <img src={iconUrl} alt={''}></img>
             </StyledIcon>
         }
             <StyledTitle className ={props.headingClass} theme={theme}>

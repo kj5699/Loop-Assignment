@@ -57,9 +57,15 @@ export const ALERT_CTA_DATA = {
     type: "alert",
     iconDirection:'right'
 }
+export const DOWNLOAD_MEMBER_LIST_CTA = {
+    label :'Download Member List',
+    iconUrl :'/assets/downLoadIcon.svg',
+    iconDirection:'left'
+}
 export const ButtonTypeClassMap = {  //can be extended
     "primary" : 'button primary',
     "secondary" : 'button secondary',
     "alert" : "button alert",
     "icon" : "button icon"
 };
+

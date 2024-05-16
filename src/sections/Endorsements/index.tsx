@@ -3,7 +3,7 @@ import Timeline from '../../components/Timeline';
 import styles from  './styles.module.scss';
 import Button from '../../components/Button';
 import InsuranceInfo from '../../components/insuranceInfo';
-import {TIMELINE_STEPS, WARNING_DATA, generateEndorsemnetCards } from '../../data/data';
+import {DOWNLOAD_MEMBER_LIST_CTA as downloadCta, TIMELINE_STEPS, WARNING_DATA, generateEndorsemnetCards } from '../../data/data';
 import IconHeading from '../../components/IconHeading';
 import EndorsementCard from '../../components/EnrollmentCard';
 import { useDispatch, useSelector } from 'react-redux';
@@ -44,7 +44,7 @@ const Enrollment = () => {
         <div className={styles.enrollmentSection__top}>
             <div className={styles.enrollmentSection__top__header}>
                 <InsuranceInfo  {...data?.insurance}  />
-                <Button label={'Download Member List'} onClick={null} iconUrl={'/assets/downLoadIcon.svg'}  />
+                <Button {...downloadCta} onClick={null}   />
             </div>
             <div className={styles.enrollmentSection__top__timeline}>
                 <Timeline stepData={TIMELINE_STEPS} curStep={0} />
@@ -56,7 +56,7 @@ const Enrollment = () => {
             <IconHeading heading={WARNING_DATA.text} 
                         iconUrl={WARNING_DATA.icon} 
                         headingClass={styles.enrollmentSection__bottom__warningText}
-                        />
+            />
 
         </div>
     </section>
