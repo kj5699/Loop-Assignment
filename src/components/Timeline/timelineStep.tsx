@@ -2,6 +2,7 @@ import styles from './styles.module.scss'
 import { TimeLineStepProps } from '../../interfaces';
 import { styled } from 'styled-components';
 import { StyledH2 } from '../StyledFonts';
+import React, { LegacyRef } from 'react';
 const Step = styled.div`
     z-index: 2;
     
@@ -17,8 +18,8 @@ const IconWrap = styled.div`
 const StepTitle = styled(StyledH2)`
     color : ${props =>  props.theme.$textSecondary}
 `;
-const TimeLineStep =(props: TimeLineStepProps) =>(
-    <Step className={styles.step + " " + props.bgClass} ref ={props.ref}>
+const TimeLineStep =React.forwardRef((props: TimeLineStepProps, ref:LegacyRef<HTMLDivElement>) =>(
+    <Step className={styles.step + " " + props.bgClass} ref ={ref}>
         <IconWrap className={styles.iconWrap} >
             <img src ={props.step.iconUrl}></img>
         </IconWrap>
@@ -26,5 +27,5 @@ const TimeLineStep =(props: TimeLineStepProps) =>(
             {props.step.title}
         </StepTitle>
     </Step>
-);
+));
 export default TimeLineStep;

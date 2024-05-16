@@ -88,5 +88,4 @@ export interface TimeLineStepProps {
         iconUrl : string;
     };
     bgClass?: string;
-    ref?: LegacyRef<HTMLDivElement>;
 }

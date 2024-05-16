@@ -13,6 +13,8 @@ const Timeline = (props: TimelineProps) => {
     const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [offset, setOffset] = useState(0)
     useEffect(()=>{
+
+        console.log(stepsRef);
         if(stepsRef.current.length > 0){
             const offsetWidthFirst = stepsRef.current[0]?.offsetWidth || 0;
             const offsetWidthLast = stepsRef.current[stepsRef.current.length - 1]?.offsetWidth || 0;
