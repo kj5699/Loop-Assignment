@@ -33,7 +33,6 @@ const Timeline = (props: TimelineProps) => {
                     bgClass={bgClass}
                     /> 
         })}
-
         <div className={`${styles.progressBar} `} style={{ width: `calc(100% - ${offset}px` , left:0}}>
             <div className={`${styles.progress}`} style={{ width: `${calculateWidthPercent(curStep, stepData.length)}%`}}>
             </div>

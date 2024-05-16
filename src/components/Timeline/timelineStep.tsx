@@ -7,12 +7,12 @@ const Step = styled.div`
     
 `;
 const IconWrap = styled.div`
-    background-color: $border-grey;
-    padding: 0.5rem;
+    background-color: ${props => props.theme.$borderGrey};
     border-radius: 100%;
     width: 36px;
     height: 36px;
     margin-bottom: 1rem;
+    align-content:center;
 `;
 const StepTitle = styled(StyledH2)`
     color : ${props =>  props.theme.$textSecondary}
