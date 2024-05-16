@@ -65,4 +65,4 @@ const AlertModal: React.FC<ModalProps> = ({ show, onClose }) => {
   );
 };
 
-export default React.memo(AlertModal);
+export default AlertModal;
