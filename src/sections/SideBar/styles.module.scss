@@ -1,11 +1,10 @@
 @import "../../styles/theme.scss";
 .sidebar{
-    width: 15vw;
+    width: 18vw;
     min-width: 200px;
     background-color: $primary-green;
     color: $primary-white;
     padding: 20px 0px 20px 0px;
-
     &__list{
         list-style: none;
         &__item{
