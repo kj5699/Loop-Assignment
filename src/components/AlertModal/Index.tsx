@@ -53,16 +53,14 @@ const AlertModal: React.FC<ModalProps> = ({ show, onClose }) => {
           <IconHeading heading={`${data?.alerts?.count || '02'} Alerts`} iconUrl='/assets/alerts.svg' />
           <Button onClick={onClose} iconUrl={'/assets/close.svg'} type="icon" label=""/>
         </ModalHeader>
-        {data &&<ModelContent
+        {data?.alerts &&<ModelContent
           image={data?.alerts?.insurance?.image}
-          title={data?.alerts.insurance.title}
-          tags={data?.alerts.insurance.tags}
-          claimsUnderQuery={data?.alerts.claimsUnderQuery}
-
+          title={data?.alerts?.insurance.title}
+          tags={data?.alerts?.insurance?.tags}
+          claimsUnderQuery={data?.alerts?.claimsUnderQuery}
         />}
       </Modal>
     </>
   );
 };
-
 export default AlertModal;
