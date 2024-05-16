@@ -2,9 +2,10 @@ import React from 'react';
 import ModelContent from "./modalContent"
 import IconHeading from '../IconHeading';
 import { ModalProps } from '../../interfaces';
-import { useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import Button from '../Button';
+import { useGetAlertsQuery } from '../../store/api/apislice';
+import Loading from '../Loading';
 
 
 const ModalHeader = styled.div`
@@ -41,7 +42,14 @@ const Backdrop = styled.div`
 
 
 const AlertModal: React.FC<ModalProps> = ({ show, onClose }) => {
-  const { data } = useSelector((state: any) => state.alerts)
+  const {
+    data,
+    isLoading,
+    isSuccess,
+    isError,
+    error
+  } = useGetAlertsQuery('');
+  console.log('Data', data, isLoading, isSuccess, isError);
   if (!show) {
     return null;
   }
@@ -53,7 +61,9 @@ const AlertModal: React.FC<ModalProps> = ({ show, onClose }) => {
           <IconHeading heading={`${data?.alerts?.count || '02'} Alerts`} iconUrl='/assets/alerts.svg' />
           <Button onClick={onClose} iconUrl={'/assets/close.svg'} type="icon" label=""/>
         </ModalHeader>
-        {data?.alerts &&<ModelContent
+
+        {isLoading && <Loading /> }
+        {isSuccess && data?.alerts &&<ModelContent
           image={data?.alerts?.insurance?.image}
           title={data?.alerts?.insurance.title}
           tags={data?.alerts?.insurance?.tags}

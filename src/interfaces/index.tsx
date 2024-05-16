@@ -37,7 +37,14 @@ export interface EndorsementState {
 }
 
 export interface AlertsData {
-    data: {},
+    data: {
+        alerts: {
+            insurance?: InsuranceData,
+            count?: number,
+            claimsUnderQuery?: number
+
+        }
+    },
     status: 'idle' | 'loading' | 'succeeded' | 'failed',
     error: string | null
 }

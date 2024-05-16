@@ -9,13 +9,11 @@ const Timeline = (props: TimelineProps) => {
     const {stepData, curStep} = props
     const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [offset, setOffset] = useState(0)
-    console.log(stepData)
 
 
 
     useEffect(()=>{
         if(stepsRef.current.length > 0){
-            // console.log(stepsRef?.current[0]?.offsetWidth, stepsRef.current[stepsArray.length -1].offsetWidth);
             const offsetWidthFirst = stepsRef.current[0]?.offsetWidth || 0;
             const offsetWidthLast = stepsRef.current[stepsRef.current.length - 1]?.offsetWidth || 0;
             setOffset(Math.floor((offsetWidthFirst) / 2 + (offsetWidthLast) / 2));
@@ -24,7 +22,6 @@ const Timeline = (props: TimelineProps) => {
     },[stepsRef.current])
     const calculateWidth = () =>{
         const width= Math.floor(((curStep - 1) / (stepData.length - 1))*100 )
-        console.log(width, curStep -1 ,stepData.length )
         return Math.min(width, 100)
     }
     
@@ -36,7 +33,7 @@ const Timeline = (props: TimelineProps) => {
             const isCompleted = index + 1 < curStep
             const bgClass = isActive ? styles.active : isCompleted ? styles.completed : ''
             return (
-                <div  className={styles.step + " " + bgClass}  ref ={el =>el &&  (stepsRef.current[index] = el)}>
+                <div  className={styles.step + " " + bgClass} key={step.title + index}  ref ={el =>el &&  (stepsRef.current[index] = el)}>
                     <div  className={styles.iconWrap} >
                         <img src ={step.iconUrl}></img>
                     </div>

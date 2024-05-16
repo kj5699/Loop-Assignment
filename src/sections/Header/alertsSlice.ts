@@ -3,7 +3,9 @@ import { AlertsData } from '../../interfaces';
 import { API_URLS } from '../../data/data';
 
 const initialState: AlertsData = {
-  data: {},
+  data: {
+    alerts: {}
+  },
   status:'idle',
   error: null
 }
@@ -19,22 +21,7 @@ export const alertsSlice = createSlice({
   reducers: {
 
   },
-  extraReducers(builder:any) {
-    builder
-      .addCase(fetchAlertsData.pending, (state:AlertsData, action: any ) => {
-        state.status = 'loading'
-        console.log('Payload', action.payload)
-      })
-      .addCase(fetchAlertsData.fulfilled, (state:AlertsData, action: any) => {
-        state.status = 'succeeded'
-        state.data = {...action.payload}
-      })
-      .addCase(fetchAlertsData.rejected, (state:AlertsData, action:any) => {
-        state.status = 'failed'
-        state.error = action.error.message
-        console.log('Payload', action.payload)
-      })
-  }
+
 });
 
 export default alertsSlice.reducer

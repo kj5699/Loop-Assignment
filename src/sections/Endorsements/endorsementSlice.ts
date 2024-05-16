@@ -14,7 +14,7 @@ const initialState: EndorsementState  = {
 export const fetchEndorsementData = createAsyncThunk('posts/fetchEndorsementData', async() => {
   const response = await fetch('https://demo6728408.mockable.io/overview');
   const jsonResponse = await response.json()
-  console.log('Json Response', jsonResponse)
+
   return jsonResponse
 })
 export const endorsementSlice = createSlice({

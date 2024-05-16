@@ -14,7 +14,7 @@ import { EndorsementDataGridProps } from '../../interfaces';
 const EndorsementDataGrid:React.FC<EndorsementDataGridProps> = ({ data }) =>(
     <div className={styles.enrollmentSection__bottom__dataGrid}>
         {generateEndorsemnetCards(data).map((dataItem) => (
-            <div className={styles.enrollmentSection__bottom__dataGrid__item}>
+            <div className={styles.enrollmentSection__bottom__dataGrid__item} key={dataItem.title}>
                 <IconHeading heading={dataItem.title} 
                             iconUrl={dataItem.iconUrl} 
                             className={styles.enrollmentSection__bottom__dataGrid__item__heading} />
