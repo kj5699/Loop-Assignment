@@ -6,10 +6,11 @@ import InsuranceInfo from '../../components/insuranceInfo';
 import {DOWNLOAD_MEMBER_LIST_CTA as downloadCta, TIMELINE_STEPS, WARNING_DATA, generateEndorsemnetCards } from '../../data/data';
 import IconHeading from '../../components/IconHeading';
 import EndorsementCard from '../../components/EnrollmentCard';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchEndorsementData } from './endorsementSlice';
+import { useDispatch} from 'react-redux';
+import { setOverviewData } from './endorsementSlice';
 import Loading from '../../components/Loading';
 import { EndorsementDataGridProps } from '../../interfaces';
+import { useGetOverviewQuery } from '../../store/api/apislice';
 
 const EndorsementDataGrid:React.FC<EndorsementDataGridProps> = ({ data }) =>(
     <div className={styles.enrollmentSection__bottom__dataGrid}>
@@ -27,18 +28,24 @@ const EndorsementDataGrid:React.FC<EndorsementDataGridProps> = ({ data }) =>(
 )
 
 const Enrollment = () => {
-  const { data, status } = useSelector((state:any) => state?.endorsements);
+//   const { data, status } = useSelector((state:any) => state?.endorsements);
+
+  const {
+    data,
+    isLoading,
+    isSuccess,
+  } = useGetOverviewQuery('');
   const dispatch:any = useDispatch();
   useEffect(() => { 
-    if(status === 'idle' && fetchEndorsementData ){
-        dispatch(fetchEndorsementData());
+    if( data && isSuccess){
+        dispatch(setOverviewData(data));
     }
-  },[])
+  },[data])
 
-  if(status === 'loading'){
+  if(isLoading){
     return <Loading />
   }
-  if(data && status ==='succeeded'){
+  if(data && isSuccess){
   return (
     <section className={styles.enrollmentSection}>
         <div className={styles.enrollmentSection__top}>

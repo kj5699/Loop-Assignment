@@ -13,9 +13,14 @@ export const apiSlice = createApi({
     // The `getPosts` endpoint is a "query" operation that returns data
     getAlerts: builder.query({
       // The URL for the request is '/fakeApi/posts'
-      query: () => '/alerts'
+      query: () => '/alerts',
+    }),
+    getOverview: builder.query({
+        // The URL for the request is '/fakeApi/posts'
+        query: () => '/overview',
+        
     })
   })
 })
 
-export const { useGetAlertsQuery } = apiSlice
+export const { useGetAlertsQuery, useGetOverviewQuery } = apiSlice

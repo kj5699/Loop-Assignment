@@ -30,7 +30,7 @@ export const generateEndorsemnetCards = (data) =>{
 
 export const  WARNING_DATA = {
     text:'All values are estimated figures, actual figures may slightly vary',
-    icon :'/assets/I⚠️nfo.svg' 
+    icon :'/assets/Info.svg' 
 }
 export const  SIDEBAR_OPTIONS = [
     { id: '1',
