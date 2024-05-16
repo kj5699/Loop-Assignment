@@ -1,17 +1,17 @@
-import React, { useEffect, useRef, useState } from 'react';
+import {  useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss'
-interface TimelineProps{
-    stepData : any[],
-    curStep : number
-}
+import { TimelineProps } from '../../interfaces';
+import TimeLineStep from './timelineStep';
+
+const calculateWidthPercent = (curStep:number, total:number ) =>{
+    const width= Math.floor(((curStep - 1) / (total - 1))*100 )
+    return Math.min(width, 100)
+};
 
 const Timeline = (props: TimelineProps) => {
     const {stepData, curStep} = props
     const stepsRef = useRef<(HTMLDivElement | null)[]>([]);
     const [offset, setOffset] = useState(0)
-
-
-
     useEffect(()=>{
         if(stepsRef.current.length > 0){
             const offsetWidthFirst = stepsRef.current[0]?.offsetWidth || 0;
@@ -20,34 +20,24 @@ const Timeline = (props: TimelineProps) => {
         }
         
     },[stepsRef.current])
-    const calculateWidth = () =>{
-        const width= Math.floor(((curStep - 1) / (stepData.length - 1))*100 )
-        return Math.min(width, 100)
-    }
-    
+
     return(
-    
     <div className= {styles.stepper}>
         {stepData && stepData.map((step, index) => {
             const isActive= index  === curStep
             const isCompleted = index + 1 < curStep
             const bgClass = isActive ? styles.active : isCompleted ? styles.completed : ''
-            return (
-                <div  className={styles.step + " " + bgClass} key={step.title + index}  ref ={el =>el &&  (stepsRef.current[index] = el)}>
-                    <div  className={styles.iconWrap} >
-                        <img src ={step.iconUrl}></img>
-                    </div>
-                    <p className={styles.title}>
-                        {step.title}
-                    </p>
-                </div>
-                
-                ) })}
+            return <TimeLineStep step={step} 
+                    key={step.title + index}  
+                    ref ={el => el &&  (stepsRef.current[index] = el)}
+                    bgClass={bgClass}
+                    /> 
+        })}
 
-            <div className={`${styles.progressBar} `} style={{ width: `calc(100% - ${offset}px` , left:0}}>
-                <div className={`${styles.progress} h-full bg-main-green`} style={{ width: `${calculateWidth()}%`}}>
-                </div>
+        <div className={`${styles.progressBar} `} style={{ width: `calc(100% - ${offset}px` , left:0}}>
+            <div className={`${styles.progress}`} style={{ width: `${calculateWidthPercent(curStep, stepData.length)}%`}}>
             </div>
+        </div>
 
     </div>
     )
@@ -55,5 +45,4 @@ const Timeline = (props: TimelineProps) => {
     <div> Timeline Data</div>
   )
 }
-
 export default Timeline

@@ -5,7 +5,6 @@ import { StyledH4, StyledP2 } from '../StyledFonts';
 interface EndorsementCardProps{
     data : any[]
 }
-
 const Card = styled.div`
     background: #FFFFFF;
     padding : 4px 24px;

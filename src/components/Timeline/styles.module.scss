@@ -7,23 +7,6 @@
     align-items: center;
     position: relative;
     margin: 1rem 0;
-
-    .step{
-        z-index: 2;
-        .iconWrap{
-            background-color: $border-grey;
-            padding: 0.5rem;
-            border-radius: 100%;
-            width: 36px;
-            height: 36px;
-            margin-bottom: 1rem;
-        }
-        .title{ 
-            @include heading-2;
-            color:$text-secondary;
-        }
-    }
-
     .active{
         .iconWrap{
             background-color: $primary-yellow;

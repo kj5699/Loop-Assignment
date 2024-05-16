@@ -1,3 +1,5 @@
+import { LegacyRef } from "react";
+
 export interface  SideBarOptionProps{
     id: string;
     title :string;
@@ -76,3 +78,15 @@ export interface ButtonProps {
     iconDirection?: string
     type?: ButtonType;
 };
+export interface TimelineProps{
+    stepData : any[],
+    curStep : number
+}
+export interface TimeLineStepProps {
+    step : {
+        title: string;
+        iconUrl : string;
+    };
+    bgClass?: string;
+    ref?: LegacyRef<HTMLDivElement>;
+}
