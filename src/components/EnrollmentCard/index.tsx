@@ -2,16 +2,13 @@ import React from 'react';
 import { styled, useTheme } from 'styled-components';
 import { theme } from '../../data/theme';
 import { StyledH4, StyledP2 } from '../StyledFonts';
-
-
-
 interface EndorsementCardProps{
     data : any[]
 }
 
 const Card = styled.div`
     background: #FFFFFF;
-    padding : 12px 24px;
+    padding : 4px 24px;
     border-radius : 0.5rem;
     display: flex;
     flex-direction: column;
@@ -20,7 +17,7 @@ const DataItem =styled.div`
     display: flex;
     justify-content: space-between;
     align-items : center;
-    padding:  24px 0;
+    padding: 20px 0;
     &:not(:last-of-type){
         border-bottom : 1px solid #EEEEEE;
     }
