@@ -1,0 +1,44 @@
+@import "../../styles/theme.scss";
+@import "../../styles/global.scss";
+.stepper{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 1rem 0;
+
+    .step{
+        z-index: 2;
+        .iconWrap{
+            background-color: $border-grey;
+            padding: 0.5rem;
+            border-radius: 100%;
+            width: 36px;
+            height: 36px;
+            margin-bottom: 1rem;
+        }
+        .title{ 
+            @include heading-2;
+            color:$text-secondary;
+        }
+    }
+
+    .active{
+        .iconWrap{
+            background-color: $primary-yellow;
+        }
+        .title{ 
+            color:$text-primary;
+        }
+
+    }
+    .progressBar{
+        position: absolute;
+        top: 17px ;
+        height: 2px;
+        background-color: $border-grey;
+        border-radius: 0.5rem;
+    }
+    
+}

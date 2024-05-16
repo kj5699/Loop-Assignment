@@ -1,0 +1,50 @@
+@import "../../styles/theme.scss";
+@import "../../styles/global.scss";
+.enrollmentSection{
+    height: 100%;
+    width: 100%;
+    background-color: $background-grey;
+
+    &__top {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        justify-content: space-between;
+
+        &__header{
+            height: 108px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+        }
+        &__timeline{
+            padding: 0 32px;
+        }
+    }
+    &__bottom{
+        padding: 3.5rem 2rem;
+
+        &__dataGrid{
+            display: grid;
+            width: 100%;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 2rem;
+            margin-bottom: 1rem;
+
+            &__item{
+               display: flex; 
+               flex-direction: column;
+                
+               &__heading{
+                    margin-bottom: 1rem;
+               }
+            }
+        }
+        &__warningText{
+            @include heading-3;
+        }
+    }
+
+    
+}
