@@ -23,5 +23,20 @@
         background-color: $border-grey;
         border-radius: 0.5rem;
     }
+
+    @media screen and (max-width : 768px){
+        flex-direction: column;
+        align-items: start;
+        .progressBar{
+            position: absolute;
+            top:0;
+            left: 17px !important;
+            width: 2px !important;
+            background-color: $border-grey;
+            border-radius: 0.5rem;
+            height: 100%;
+
+        }
+    }
     
 }

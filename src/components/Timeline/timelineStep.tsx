@@ -3,18 +3,28 @@ import { TimeLineStepProps } from '../../interfaces';
 import { styled } from 'styled-components';
 import { StyledH2 } from '../StyledFonts';
 import React, { LegacyRef } from 'react';
+
 const Step = styled.div`
     z-index: 2;
-    
-    
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    @media screen and (max-width : 768px){
+        flex-direction : row;
+        align-items:center;
+        margin-bottom: 2rem;
+    }
 `;
 const IconWrap = styled.div`
     background-color: ${props => props.theme.$borderGrey};
     border-radius: 100%;
     width: 36px;
     height: 36px;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 0;
     align-content:center;
+    @media screen and (max-width : 768px){
+        margin: 0 1rem 0 0;
+    }
 
 `;
 const StepTitle = styled(StyledH2)`
